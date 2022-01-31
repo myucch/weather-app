@@ -1,5 +1,6 @@
-sercbody {
-  font-family: "Montserrat", sans-serif;
+body {
+  font-family: "Lato", sans-serif;
+  text-align: center;
 }
 
 form {
@@ -24,6 +25,18 @@ h3 {
 h3 {
   padding-bottom: 34px;
   font-size: 18px;
+}
+
+.footer {
+  font-size: smaller;
+}
+
+a.footer-link {
+  text-decoration: none;
+}
+
+a.footer-link:hover {
+  text-decoration: underline;
 }
 
 .weather-date {
