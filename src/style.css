@@ -1,6 +1,9 @@
 body {
   font-family: "Lato", sans-serif;
   text-align: center;
+  background: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 form {
@@ -57,27 +60,31 @@ a.temperature:hover {
   color: #e38e95;
 }
 
+.container {
+  max-width: 800px;
+}
+
 .card {
   margin: 50px;
-  border-radius: 10px;
+  border-radius: 16px;
+  border: none;
 }
 
 .card-body {
   text-align: center;
+  border: none;
+  border-radius: 16px;
+  background-color: #fcfcfc;
   padding-bottom: 50px;
+  box-shadow: 10px 15px 50px 10px rgba(72, 100, 50, 0.15);
 }
 
 .form-style {
-  border: 1px grey solid;
+  background: #deecdd9d;
+  border: none;
   border-radius: 5px;
   line-height: 2em;
-  padding: 0 8px;
-}
-
-.location-icon {
-  margin: 10px;
-  font-size: 20px;
-  color: #e38e95;
+  padding: 2px 16px;
 }
 
 .search-city {
@@ -85,16 +92,17 @@ a.temperature:hover {
   border: 1px solid;
   line-height: 1.5em;
   margin: 1%;
+  box-shadow: 5px 5px 2px #deecdd;
 }
 
 .search-city:hover {
   background-color: #e38e95;
   opacity: 0.8;
-  border: 1px solid #e38e95;
   color: white;
   cursor: pointer;
   transition: all 200ms ease-in-out;
   transform: scale(1.2) perspective(1px);
+  box-shadow: none;
 }
 
 .location-button {
@@ -102,16 +110,17 @@ a.temperature:hover {
   border: 1px solid;
   line-height: 1.5em;
   margin: 1%;
+  box-shadow: 5px 5px 2px #deecdd;
 }
 
 .location-button:hover {
   background-color: #e38e95;
   opacity: 0.8;
-  border: 1px solid #e38e95;
   color: white;
   cursor: pointer;
   transition: all 200ms ease-in-out;
   transform: scale(1.2) perspective(1px);
+  box-shadow: none;
 }
 
 .main-weather-icon {
