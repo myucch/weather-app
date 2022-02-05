@@ -23,11 +23,19 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 
-weatherDate.innerHTML = `${day}, ${hours}:${minutes}`;
+weatherDate.innerHTML = `${day} ${hours}:${minutes}`;
 
 function showTemperature(response) {
   document.querySelector("h1").innerHTML = response.data.name;
-  document.querySelector("h2").innerHTML = Math.round(response.data.main.temp);
+  document.querySelector("#temperature-main").innerHTML = Math.round(
+    response.data.main.temp
+  );
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].description;
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
 }
 
 // API integration search city in box

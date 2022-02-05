@@ -19,11 +19,6 @@ h1 {
   line-height: 0%;
 }
 
-h2 {
-  font-size: px;
-}
-
-h2,
 h3 {
   line-height: 0.8em;
   font-weight: 400;
@@ -69,25 +64,6 @@ a.footer-link:hover:before {
 
 a.footer-link:hover:after {
   content: "✨";
-}
-
-.weather-date {
-  padding: 15px;
-  font-size: 18px;
-  color: #757575;
-}
-
-a.temperature {
-  display: inline-block;
-  text-decoration: none;
-  color: black;
-  font-size: 18px;
-  margin-bottom: 34px;
-}
-
-a.temperature:hover {
-  text-decoration: underline;
-  color: #e38e95;
 }
 
 .container {
@@ -164,10 +140,57 @@ a.temperature:hover {
   margin: 0 10px 0 20px;
 }
 
+.weather-date {
+  padding-top: 10px;
+  font-size: 18px;
+  color: #757575;
+}
+
+.weather-description {
+  text-transform: capitalize;
+  padding-top: 0;
+  padding-bottom: 15px;
+  font-size: 18px;
+  color: #757575;
+}
+
 .main-weather-icon {
-  font-size: 36px;
+  font-size: 50px;
   color: #e38e95;
-  padding-bottom: 5px;
+  height: 64px;
+  width: 64px;
+  float: center;
+}
+
+.tempNumber {
+  font-size: 58px;
+  font-weight: 400;
+}
+
+.units {
+  position: relative;
+  top: -30px;
+  margin-left: 5px;
+}
+
+a.temperature {
+  text-decoration: none;
+  color: black;
+}
+
+a.temperature:hover {
+  text-decoration: underline;
+  color: #e38e95;
+}
+
+.description-2 {
+  padding-top: 15px;
+  font-size: 15px;
+  color: #757575;
+}
+
+.secondary-container {
+  margin-top: 30px;
 }
 
 .weather-icon {

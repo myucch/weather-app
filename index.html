@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <title>Wireframe Vanilla Weather App</title>
+    <title>Vanilla Weather App</title>
     <script
       src="https://kit.fontawesome.com/fc36e0d9c1.js"
       crossorigin="anonymous"
@@ -52,55 +52,71 @@
 
           <h1>Leuven</h1>
           <div class="weather-date" id="weather-date"></div>
-          <div class="main-weather-icon">
-            <i class="fas fa-cloud-sun"></i>
+          <div class="weather-description" id="description">
           </div>
-          <h2>4</h2>
-          <a href="#" id="celsius" class="temperature">°C</a> |
-          <a href="#" id="fahrenheit" class="temperature">°F</a>
 
-          <div class="row">
-            <div class="col-2">
-              <div class="weather-icon">
-                <i class="fas fa-sun"></i>
+          <div class="main-weather-section">
+            <span class="main-weather-icon">
+              <i class="fas fa-cloud-sun"></i
+            ></span>
+
+            <span class="tempNumber" id="temperature-main"></span>
+            <span class="units"
+              ><a href="#" id="celsius" class="temperature">°C</a> |
+              <a href="#" id="fahrenheit" class="temperature">°F</a></span
+            >
+          </div>
+          
+          <div class="description-2">
+            Humidity: <span id="humidity"></span>%
+          </br> 
+            Wind: <span id="wind"></span> km/h
+          </div>
+
+          <div class="secondary-container">
+            <div class="row">
+              <div class="col-2">
+                <div class="weekdays">SUN</div>
+                <div class="weather-icon">
+                  <i class="fas fa-sun"></i>
+                </div>
+                5°C
               </div>
-              5°C
-              <div class="weekdays">SUN</div>
-            </div>
-            <div class="col-2">
-              <div class="weather-icon">
-                <i class="fas fa-cloud-sun"></i>
+              <div class="col-2">
+                <div class="weekdays">MON</div>
+                <div class="weather-icon">
+                  <i class="fas fa-cloud-sun"></i>
+                </div>
+                4°C
               </div>
-              4°C
-              <div class="weekdays">MON</div>
-            </div>
-            <div class="col-2">
-              <div class="weather-icon">
-                <i class="fas fa-cloud"></i>
+              <div class="col-2">
+                <div class="weekdays">TUE</div>
+                <div class="weather-icon">
+                  <i class="fas fa-cloud"></i>
+                </div>
+                8°C
               </div>
-              8°C
-              <div class="weekdays">TUE</div>
-            </div>
-            <div class="col-2">
-              <div class="weather-icon">
-                <i class="fas fa-cloud-sun-rain"></i>
+              <div class="col-2">
+                <div class="weekdays">WED</div>
+                <div class="weather-icon">
+                  <i class="fas fa-cloud-sun-rain"></i>
+                </div>
+                9°C
               </div>
-              9°C
-              <div class="weekdays">WED</div>
-            </div>
-            <div class="col-2">
-              <div class="weather-icon">
-                <i class="fas fa-cloud-sun"></i>
+              <div class="col-2">
+                <div class="weekdays">THU</div>
+                <div class="weather-icon">
+                  <i class="fas fa-cloud-sun"></i>
+                </div>
+                7°C
               </div>
-              7°C
-              <div class="weekdays">THU</div>
-            </div>
-            <div class="col-2">
-              <div class="weather-icon">
-                <i class="fas fa-sun"></i>
+              <div class="col-2">
+                <div class="weekdays">FRI</div>
+                <div class="weather-icon">
+                  <i class="fas fa-sun"></i>
+                </div>
+                8°C
               </div>
-              8°C
-              <div class="weekdays">FRI</div>
             </div>
           </div>
         </div>
