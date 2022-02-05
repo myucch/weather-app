@@ -40,15 +40,41 @@ h3 {
 
 a.footer-link {
   text-decoration: none;
+  background-color: transparent;
+  color: #757575;
 }
 
 a.footer-link:hover {
-  text-decoration: underline;
+  font-size: 120%;
+  font-weight: 700;
+  transition: all 200ms ease-in-out;
+  background: linear-gradient(
+    to right,
+    #ebe090 2%,
+    #f0e567 30%,
+    #d2edd0 50%,
+    #cbecc9 100%
+  );
+
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+a.footer-link:hover:before {
+  content: "✨";
+}
+
+a.footer-link:hover:after {
+  content: "✨";
 }
 
 .weather-date {
   padding: 15px;
   font-size: 18px;
+  color: #757575;
 }
 
 a.temperature {
@@ -69,7 +95,8 @@ a.temperature:hover {
 }
 
 .card {
-  margin: 50px;
+  margin: 1.5em 3em;
+  margin-top: 3em;
   border-radius: 16px;
   border: none;
 }
@@ -91,6 +118,12 @@ a.temperature:hover {
   padding: 2px 16px;
 }
 
+.form-style:focus {
+  outline: 0;
+  border-color: rgb(236, 194, 241);
+  box-shadow: 0 0 0 0.1rem rgba(133, 121, 135, 0.5);
+}
+
 .search-city {
   background: none;
   border: 1px solid;
@@ -105,7 +138,7 @@ a.temperature:hover {
   border: none;
   color: white;
   cursor: pointer;
-  transition: all 200ms ease-in-out;
+  transition: all 250ms ease-in-out;
   transform: scale(1.3) perspective(1px);
   box-shadow: none;
   margin: 0 15px;
@@ -125,7 +158,7 @@ a.temperature:hover {
   border: none;
   color: white;
   cursor: pointer;
-  transition: all 200ms ease-in-out;
+  transition: all 250ms ease-in-out;
   transform: scale(1.3) perspective(1px);
   box-shadow: none;
   margin: 0 10px 0 20px;
