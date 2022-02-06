@@ -147,11 +147,14 @@ a.footer-link:hover:after {
 }
 
 .weather-description {
-  text-transform: capitalize;
   padding-top: 0;
   padding-bottom: 15px;
   font-size: 18px;
   color: #757575;
+}
+
+.weather-description:first-letter {
+  text-transform: capitalize;
 }
 
 .main-weather-icon {
