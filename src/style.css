@@ -19,16 +19,6 @@ h1 {
   line-height: 0%;
 }
 
-h3 {
-  line-height: 0.8em;
-  font-weight: 400;
-}
-
-h3 {
-  padding-bottom: 34px;
-  font-size: 18px;
-}
-
 .footer {
   font-size: smaller;
 }
@@ -214,4 +204,9 @@ a.temperature:hover {
   font-size: 30px;
   color: #e38e95;
   padding-bottom: 10px;
+}
+
+.weekdays {
+  line-height: 0.8em;
+  font-weight: 400;
 }
