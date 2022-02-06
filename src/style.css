@@ -172,7 +172,7 @@ a.footer-link:hover:after {
 }
 
 .tempNumber {
-  font-size: 58px;
+  font-size: 64px;
   font-weight: 400;
 }
 
@@ -183,12 +183,21 @@ a.footer-link:hover:after {
 
 a.temperature {
   text-decoration: none;
-  color: black;
+  color: #e38e95;
 }
 
 a.temperature:hover {
   text-decoration: underline;
-  color: #e38e95;
+  color: black;
+}
+
+.temperature.active {
+  color: black;
+  cursor: default;
+}
+
+.temperature.active:hover {
+  text-decoration: none;
 }
 
 .description-2 {
