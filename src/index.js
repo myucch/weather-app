@@ -25,6 +25,37 @@ if (minutes < 10) {
 
 weatherDate.innerHTML = `${day} ${hours}:${minutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+        <div class="col-2">
+          <div class="forecast-weekdays">${day}</div>
+          <div class="weather-icon">
+            <img src="https://openweathermap.org/img/wn/04d@2x.png" alt width="50" />
+          </div>
+            
+          <div class="forecast-temperature">
+            <span class="forecast-temperature-max">
+             10°
+            </span> 
+            <span class="forecast-temperature-min">
+             5°
+            </span>
+          </div>
+        </div>
+      `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 // Retrieve location
 function retrievePosition(position) {
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
@@ -110,3 +141,4 @@ let form = document.querySelector("#search-city-form");
 form.addEventListener("submit", submitCity);
 
 searchCity("Leuven");
+displayForecast();
