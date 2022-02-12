@@ -25,7 +25,9 @@ if (minutes < 10) {
 
 weatherDate.innerHTML = `${day} ${hours}:${minutes}`;
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
+
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -102,6 +104,14 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
+// Defining function of forecast
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "8c83aaa11682fdeb36d3e77599574e7c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showTemperature(response) {
   document.querySelector("h1").innerHTML = response.data.name;
   document.querySelector("#temperature-main").innerHTML = Math.round(
@@ -122,6 +132,8 @@ function showTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   celsiusTemp = response.data.main.temp;
+
+  getForecast(response.data.coord);
 }
 
 // API integration search city
@@ -141,4 +153,6 @@ let form = document.querySelector("#search-city-form");
 form.addEventListener("submit", submitCity);
 
 searchCity("Leuven");
-displayForecast();
+
+//calling the function of forecast that is defined piu in su
+//displayForecast();
