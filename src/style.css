@@ -164,6 +164,7 @@ a.footer-link:hover:after {
 .tempNumber {
   font-size: 64px;
   font-weight: 400;
+  margin-left: -5px;
 }
 
 .units {

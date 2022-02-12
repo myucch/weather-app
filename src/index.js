@@ -86,39 +86,8 @@ function getCurrentPosition() {
 let button = document.querySelector("#current-location-button");
 button.addEventListener("click", getCurrentPosition);
 
-// Fahrenheit and Celsius converter
-function displayFahrenheitTemp(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature-main");
-
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-
-  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
-}
-
-function displayCelsiusTemp(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature-main");
-
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-
-  temperatureElement.innerHTML = Math.round(celsiusTemp);
-}
-
-let celsiusTemp = null;
-
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
-
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", displayCelsiusTemp);
-
 // Defining function of forecast
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "8c83aaa11682fdeb36d3e77599574e7c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
@@ -165,6 +134,3 @@ let form = document.querySelector("#search-city-form");
 form.addEventListener("submit", submitCity);
 
 searchCity("Leuven");
-
-//calling the function of forecast that is defined piu in su
-//displayForecast();
