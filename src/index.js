@@ -25,33 +25,45 @@ if (minutes < 10) {
 
 weatherDate.innerHTML = `${day} ${hours}:${minutes}`;
 
+// Function formatting the date inside the displayForecast function, (forecastDay.dt), where the API pulls data from the Object/Array
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  let days = ["Fri", "Sat", "Sun"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-        <div class="col-2">
-          <div class="forecast-weekdays">${day}</div>
-          <div class="weather-icon">
-            <img src="https://openweathermap.org/img/wn/04d@2x.png" alt width="50" />
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+          <div class="col-2">
+            <div class="forecast-weekdays">${formatDay(forecastDay.dt)}</div>
+            <div class="weather-icon">
+              <img src="https://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png" alt width="50" />
+            </div>
+              
+            <div class="forecast-temperature">
+              <span class="forecast-temperature-max">
+              ${Math.round(forecastDay.temp.max)}°
+              </span> 
+              <span class="forecast-temperature-min">
+              ${Math.round(forecastDay.temp.min)}°
+              </span>
+            </div>
           </div>
-            
-          <div class="forecast-temperature">
-            <span class="forecast-temperature-max">
-             10°
-            </span> 
-            <span class="forecast-temperature-min">
-             5°
-            </span>
-          </div>
-        </div>
-      `;
+        `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
